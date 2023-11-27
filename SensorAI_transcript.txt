@@ -1,0 +1,1091 @@
+Video URL: https://www.youtube.com/watch?v=XRgoOzj7wcU
+
+Paper URL: https://www.nature.com/articles/s42256-023-00746-x
+
+0:00
+hello Community today we talk about
+0:02
+sensor array artificial intelligence so
+0:06
+what is it now we move from our language
+0:09
+from our large language model where we
+0:11
+have here given the language is the
+0:13
+object where we have a semantic a syntax
+0:16
+a grammar we have a vocabulary Now we
+0:20
+move over to some general data we
+0:22
+construct now a data array AI so we will
+0:26
+not here predict the next word in an
+0:29
+auto regressive llm but we will predict
+0:32
+missing data missing global data or
+0:35
+something else so what we dream of here
+0:38
+is a capability of ani system to
+0:41
+reconstruct some complex spatial field
+0:44
+from only sparse sensory data so either
+0:48
+you are here climate science Metrology
+0:52
+or in medical imaging or geophysics
+0:55
+seismology you only have some sensors
+0:58
+you only have some images some lighter
+1:01
+data some infrared observation but you
+1:03
+never have the complete sensory data
+1:05
+that you would need or think about
+1:08
+energy management here in smart grids to
+1:11
+efficiently manage and predict energy
+1:13
+consumption and energy distribution what
+1:16
+if you do not have a sensor on each
+1:18
+utility if you do not have a sensor on
+1:20
+each Network
+1:22
+note we have sparse data and we need to
+1:25
+build with a a complete understanding I
+1:28
+look at it at fin cial modeling
+1:31
+analyzing real Ultra fast market trends
+1:34
+risk assessment using your sparse data
+1:37
+point from the Asian Financial Market
+1:39
+from the European Financial Market from
+1:41
+the American Financial Market how they
+1:44
+are
+1:44
+interconnected what if you only have
+1:47
+some thousand data points and you are
+1:50
+missing out a complete data field this
+1:53
+is the topic of today so and since we
+1:56
+have an upcoming un climate conference
+1:58
+hey why not take your example of AI for
+2:01
+a global sensory array as you can see
+2:04
+here in the Ocean between North and
+2:06
+South America there are a lot of sensor
+2:09
+floating here in the ocean measuring
+2:12
+temperature the wave height
+2:15
+salinity pressure and so on but we only
+2:18
+have 1,000 or maybe 10,000 sensor data
+2:21
+for a complete ocean so we're missing
+2:24
+out a complete picture so what we want
+2:26
+we want to process here this sparse
+2:29
+sensory data and reconstruct with the
+2:32
+help of our AI system some complex
+2:35
+spatial fields that engulf here maybe
+2:38
+the complete planet
+2:40
+Earth great so clear a defined
+2:43
+reconstruct entire Global Fields using
+2:46
+only few sensor
+2:49
+values this is a visualization I tried
+2:52
+to show you think about this is our
+2:53
+system this is our ecosystem and you see
+2:56
+we have here some array that have no
+2:59
+sensory data
+3:00
+and then we have Aras where we have a
+3:02
+lot of sensory data or maybe here we
+3:04
+only have pressure data or atmospheric
+3:06
+data temperature data and we're missing
+3:09
+out the other parameter so you see this
+3:12
+is here a real life scenario where you
+3:14
+try to understand the complex system
+3:17
+here in its time
+3:19
+dependence so how we do this now you
+3:23
+know if you're subscriber of this
+3:25
+channel hey you know we need a special
+3:27
+encoder for mapping here our spal
+3:29
+coordinates of our sensors to vectors
+3:32
+then we need an attention based encoder
+3:35
+for transforming here our spatial
+3:37
+encodings and our sensor values the
+3:40
+values that the sensor give us into a
+3:43
+higher dimensional latent Matrix space
+3:46
+and then we need an attention based
+3:48
+decoder for the output for generating
+3:50
+the output reconstructing here our field
+3:54
+values and you might say hey this is
+3:57
+nice so we have here a latent sequence
+3:59
+array here for some compact
+4:01
+representation and non-local processing
+4:04
+across input sequences and you know this
+4:07
+is here the Transformer architecture
+4:10
+from our llm from our vision language
+4:13
+model we can use now our Insight how an
+4:17
+llm Works how the different self
+4:19
+attention mechanisms interact together
+4:22
+to build this system so now we move from
+4:24
+the llm to a data array EI let me show
+4:29
+you this in more detail for example you
+4:32
+have here valion have some mountains and
+4:35
+you see here those are for example air
+4:38
+pollution and you want to monitor how is
+4:41
+the air pollution situation if you have
+4:45
+for example an energy input from the
+4:47
+from the Sun or you have a strong wind
+4:50
+or you have additional pollutants at
+4:52
+specific local region how does the whole
+4:55
+system integrates now the nice thing is
+4:59
+any I is now able to help us with
+5:03
+this to start we have here from Deep
+5:06
+Mind Google Deep Mind March 2022 a long
+5:09
+time ago they exactly examined this
+5:13
+problem this was before there was gpt3
+5:15
+or gbd4 or J gbt this is from the old
+5:18
+old times and they created here a
+5:21
+general architecture for structured
+5:23
+input and outputs and they called this
+5:25
+the perceiver io now this is a encoder
+5:30
+decoder architecture based here on this
+5:33
+and it is handling here the sensory data
+5:35
+through an attention mechanism for
+5:38
+processing and reconstructing here what
+5:40
+we need our complex spatial data that
+5:44
+have a complete description of our
+5:46
+system from just some sparse input
+5:50
+sensory array data great so if you want
+5:54
+to have a deep dive go to the original
+5:57
+perceiver model this was interested also
+6:00
+introduced of course by Google Deep Mind
+6:02
+here for to process large and
+6:04
+hetrogeneous input using
+6:06
+Transformer and was designed to be
+6:08
+modality agnostic so we could process
+6:12
+images audio data sensory data numerical
+6:15
+data whatever we have then the perer iio
+6:19
+that I just showed you built on this and
+6:21
+now we also integrate here if you want a
+6:24
+modality agnostic output so we have
+6:26
+input output modality agnostic great
+6:30
+think about the
+6:32
+ocean let's say we have here a sensor
+6:35
+Network let's say this is somewhere here
+6:37
+in the South Pacific maybe this here is
+6:40
+around I don't know New Zealand and this
+6:42
+is here somewhere in Asia some dense a
+6:46
+network here of sensory data and then
+6:48
+you can see there region in the ocean in
+6:50
+this simulation where you almost have no
+6:53
+data but if we have for example a
+6:56
+tectonic uh plate event happening and we
+7:00
+have waves traveling around the globe
+7:03
+and we have no sensory data so we use
+7:06
+now the sensory data that we have to
+7:09
+understand the behavior here of the wave
+7:11
+for example in this spatial
+7:14
+locations
+7:16
+great of course another challenge is if
+7:18
+we have satellite data we have realtime
+7:21
+sensory data coming in every second
+7:24
+every minute we have to integrate your
+7:26
+real time sensory data to understand
+7:28
+here the o current for example or how a
+7:31
+pollutant if it's set free here for
+7:35
+example in Florida how it travel see the
+7:38
+world either in the fluid in the water
+7:40
+maybe in the air we have air pollutions
+7:43
+and and and and now normally you have
+7:47
+complex Climer models that you have
+7:49
+superc computer and they crack the data
+7:52
+but the question is can we use AI
+7:54
+systems now what we know from the
+7:56
+language modeling think about how good
+7:59
+that GPT is for the human language
+8:02
+simulation and mimicry can we use this
+8:04
+now here for other sensory data that are
+8:09
+not words the element but numerical
+8:13
+values so now you know here in this
+8:15
+picture we only have sparse sensor data
+8:19
+maybe only 10 sensors in the whole ocean
+8:22
+so let me show you how good it could be
+8:26
+approximated imagine we have a pipe and
+8:29
+in this pipe we have two fluids we have
+8:32
+a blue fluid and a red fluid and we mix
+8:35
+it up those two fluids so we have a
+8:37
+turbulent Behavior we have no laminar uh
+8:40
+fluid dynamics within this tube and then
+8:44
+we put in 50 sensors at specific
+8:47
+location in this tube let's say this
+8:49
+tube is about I don't know 10 m long and
+8:53
+1 M wide and on those 50 location we put
+8:56
+our sensor so we understand that this
+8:59
+very precise location in this tube we
+9:02
+can measure certain parameters of these
+9:05
+two
+9:06
+fluids you see here at the bottom here
+9:09
+the ground truth if we take here a laser
+9:11
+and we here now monitor each water
+9:14
+molecule here this is here for a
+9:18
+particular time interval exactly H the
+9:20
+distribution of the red and the blue
+9:22
+fluid in our tube and now the task is if
+9:27
+we have 25 sensor port points or 50
+9:29
+sensor points or 300 sensor points in
+9:33
+our tube how good is our AI that we can
+9:37
+reconstruct with our artificial
+9:40
+intelligence here the real natural
+9:44
+phenomenon that happens in nature so as
+9:47
+you can see our 50 sens
+9:49
+locations calculating now the whole
+9:52
+volume of this tube covers only
+9:56
+0.006% here after spatial error that is
+9:59
+available to us here so only 50 sensors
+10:03
+here for the complete tube and if you
+10:05
+look now here at our AI computation you
+10:09
+see it is quite similar so we have here
+10:13
+the red fluids and the blue fluids and
+10:15
+you see there are similar patterns of
+10:18
+course if you increase now the sensor
+10:20
+readout from 50 sensors to 300 sensors
+10:24
+in the tube you get even a better
+10:27
+approximation so you see even with some
+10:32
+small amount of sensors in the tube with
+10:35
+some ridiculous small spatial
+10:38
+coverage we can have here enough Spar
+10:41
+sensory data to understand at a complete
+10:44
+fluid system and this is what we need
+10:48
+now here Deep Mind and here sense cyer
+10:52
+this is here from Lo alos research group
+10:54
+they called they they said this is now
+10:57
+what we call this so this sensor
+10:59
+receiver AI has some key components we
+11:04
+have two encoder we have a spatial
+11:06
+encoder we have a attention based
+11:08
+encoder and then we have the attention
+11:10
+based
+11:11
+decoder so what we do this component the
+11:15
+first component Maps here the spatial
+11:17
+coordinates to high dimensional Vector
+11:20
+space so this is exactly what we do with
+11:22
+our llm we take the words or the tokens
+11:25
+or the sub word token or whatever
+11:27
+tokenizer you have and you map them in a
+11:30
+high dimensional 768 dimensional or 1,24
+11:34
+dimensional Vector space this translates
+11:37
+here the geometric information of the
+11:39
+sensor location in a format that the
+11:42
+newal network can process this is
+11:44
+absolutely identical what we do here in
+11:46
+the language model we have here similar
+11:50
+sentences and we put them in places in
+11:52
+our Vector space that are close by
+11:55
+beautiful then you know in our trans
+11:59
+form architecture we have now self
+12:01
+attention coming in so leveraging now
+12:04
+the attention mechanism this encoder
+12:07
+transforms here the spatial encodings
+12:10
+and the values from our sensors so we
+12:14
+have the location of our sensors where
+12:16
+they are in the tube and the specific
+12:18
+sens of values about temperature
+12:20
+salinity about the pressure about
+12:23
+whatever and we integrate them nowadays
+12:26
+in our Matrix space this is crucial for
+12:28
+capturing the relation and dependencies
+12:31
+also time dependencies between the
+12:34
+different sensor readings and their
+12:35
+location and then if we have this
+12:39
+encoded we just do the reverse so we do
+12:42
+the attention based decoder step you
+12:44
+know this from our llm system from our
+12:47
+transform
+12:48
+architecture now the decoder uses a lat
+12:51
+Matrix to Output here the reconstructed
+12:54
+field values at which point was the red
+12:57
+fluid at which point was the blue fluid
+12:59
+it essentially translate here the
+13:01
+process sensor data back here into a
+13:04
+comprehensive spatial field which could
+13:07
+represent various physical phenomena and
+13:10
+this is exactly what we need we have now
+13:14
+the original behavior of the system and
+13:18
+then what we do like in the llm we
+13:21
+calculate here specific loss function it
+13:24
+is a very easy loss function in our
+13:26
+example so and you have back prop and
+13:29
+forward pausing and everything that we
+13:31
+know from our llms and the same happens
+13:34
+here the only difference is that our
+13:36
+objects are not tokens from words but
+13:39
+here we have numerical values that tell
+13:41
+us what numerical manifolds our system
+13:46
+can approximate or can inherit so
+13:49
+beautiful the primary function here of
+13:52
+this sensor Seer is to reconstruct your
+13:56
+entire Global Fields using only some few
+13:59
+sensor values our sparse sensor array
+14:03
+data this is useful when we only have
+14:07
+some limited amount of sensor or in some
+14:09
+era we have no sensor at all great so if
+14:14
+you look this from an information
+14:16
+theoretical
+14:17
+perspective this sparse sensing
+14:20
+phenomenon that we are now trying to
+14:23
+solve here is nothing more than an
+14:25
+inverse modeling problem that Maps a
+14:29
+sparse low dimensional measurement to a
+14:32
+high dense High dimensional State great
+14:36
+so very easy if you think here about the
+14:38
+planetary ecosystem maybe you only think
+14:41
+about the water ecosystem maybe you
+14:44
+think about the air ecosystem but of
+14:46
+course you have here that water
+14:50
+evaporates becomes here changes the
+14:53
+state aggregate State you have a dynamic
+14:56
+depends on the climate depends on the
+14:58
+temperature temperature on the pressure
+14:59
+and and and and then you have whatever
+15:02
+heat is radiated here from the
+15:04
+continents so the complexity of the
+15:07
+ecosystem that you have we try to map
+15:11
+this into this High dimensional space so
+15:14
+that our AI can find some patterns
+15:18
+within this state and then if we reduce
+15:21
+it here to the simple output space those
+15:24
+patterns become available for us to
+15:26
+examine great
+15:30
+now we have two ways to think about this
+15:33
+either we have here in Floy Dynamics or
+15:36
+diffusion theory in theoretical physics
+15:38
+we have an equation we have a
+15:39
+mathematical equation and I can tell you
+15:41
+hey if this is this this and this
+15:43
+parameter and this coefficient and the
+15:44
+brownan motion and we have some infini
+15:47
+ismal increments and yes this is it
+15:49
+about the time interval I can give you
+15:52
+here an equation where we can solve this
+15:55
+equation for a particular system with
+15:58
+here a specific boundary condition with
+16:01
+specific initial conditions of the
+16:03
+system this would be here the
+16:05
+theoretical physics approach or if you
+16:07
+put all this equation into a super
+16:10
+computer and you just give it all the
+16:13
+start parameters here and the boundary
+16:16
+condition or and this is what we try now
+16:20
+in this video what is also here a
+16:22
+research topic I just give here this
+16:25
+sensory data of this system to thei
+16:29
+so instead of a single formula with an
+16:32
+analytical solution that I have to solve
+16:35
+for every molecule in the complete
+16:38
+system I describe here if you want in
+16:42
+this numerical sensory data array the
+16:46
+process that is happening in the
+16:48
+system and a third solution would be
+16:51
+that I say okay here this is molecule
+16:53
+number
+16:55
+1,512 and it is now approaching molecule
+16:57
+5 716 and it is right next to molecule
+17:03
+2588 but you see a language description
+17:06
+does not make sense a pure mathematical
+17:08
+analytical description would need
+17:10
+extreme compute power and this is now if
+17:13
+you want to thir way that we give here
+17:16
+the complete system to thei and the
+17:21
+tries to understand here the critical
+17:22
+component of the system and understands
+17:25
+here the interrelation between the
+17:26
+different parameters of the system that
+17:28
+and change and that have here an
+17:31
+influence on the system output
+17:34
+beautiful so what we have we have a
+17:36
+databased reality here of a single
+17:39
+process I showed you this on a diffusion
+17:41
+process so you can now understand this
+17:44
+either on a mechanical level on a
+17:46
+molecular level whatever you want you
+17:49
+can program this here as an input from
+17:51
+few sensory data to here our AI so we
+17:55
+have a data sensory array in input to
+17:59
+our
+18:01
+system yeah as I showed you in this
+18:03
+beautiful video that there's a
+18:06
+solution if you have a pre-trained model
+18:10
+if you want to add characteristics and
+18:12
+functionalities we can do this now with
+18:15
+Laura adapters where only the
+18:17
+fine-tuning of the Laura adapter layer
+18:19
+is happening and the pre-trained model
+18:21
+the weights the T of Weights here are
+18:23
+frozen and I showed you that we can do
+18:26
+this for multiple Laura adapter if you
+18:29
+have 100 product description and you
+18:30
+have an upcoming sales information for
+18:32
+your company and you want to program the
+18:35
+custo the perfect customer interface AI
+18:38
+you can do this weekly you can update
+18:41
+here the blades every month if you have
+18:44
+special promotion if you want to
+18:45
+optimize for cross selling or upselling
+18:48
+you can do this simply here with some
+18:50
+adapter you can switch on and switch off
+18:52
+but the pre-trained mall the main big
+18:55
+huge mall is frozen it stays the same
+18:58
+same but we learn new Behavior here with
+19:02
+the low adapter and now here you
+19:06
+understand the idea is now we can do the
+19:08
+same we can configure now our perfect
+19:10
+Noah AI
+19:12
+here for the Oceanic and Atmospheric
+19:15
+Administration AI system so we have here
+19:18
+the global Oceanic fluid dynamics of our
+19:21
+planet here in detail and then we just
+19:24
+train for special events like an
+19:26
+underwater Volcan eruption or for some
+19:30
+specific diffusion processes of
+19:32
+pollutants that enter here think about
+19:35
+the Gulf of Mexico if there's an oil
+19:37
+spill what happens we can take at least
+19:41
+here the historic data and show how the
+19:44
+oil moved here in the Gulf of Mexico and
+19:47
+what happened or we have a mathematical
+19:49
+simulation and put this as an input data
+19:51
+array to our AI we can have what happens
+19:55
+if there happens landslides above ground
+19:59
+but also underwater landslides what
+20:02
+about plate tectonic events that happen
+20:05
+at the bottom of the ocean what is
+20:07
+exactly here our Theory you can update
+20:10
+this you can fine-tune this or about
+20:13
+wave oscillation in specific geographic
+20:16
+regions so you see you can build here
+20:19
+your model that takes into account all
+20:22
+of those different
+20:24
+effects and you do not have to find you
+20:27
+in pre-train everything but you can do
+20:30
+this here and this is the beauty as I
+20:31
+showed you in the last video here on the
+20:34
+Lura adapter great yes in the video here
+20:38
+about the stable diffusion optimization
+20:40
+that are happening now last week here
+20:43
+with an LCM lur so we do not have just
+20:46
+the lurer adapter modules but we have
+20:48
+now here the LCM lower and I showed you
+20:51
+here you can very easily set the
+20:55
+adapters together combine the lur you
+20:58
+said set up adapter your first adapter
+21:00
+your second adapter we already have here
+21:02
+the mathematical code implementation on
+21:05
+hugging phas for example for image
+21:08
+manipulation for stable diffusion Excel
+21:10
+with our Laurer models we can take LCM
+21:13
+Laurer models or the classical Laurer
+21:15
+models and we can build this here on
+21:17
+visual data
+21:19
+already and now it would be just to go
+21:21
+from a two-dimensional visual data to a
+21:24
+three-dimensional physical system great
+21:28
+all of this is here in this publication
+21:32
+by Nature Nature machine intelligence
+21:35
+you know nature is behind a pay wall so
+21:38
+I cannot show you here the complete
+21:40
+study for obvious reason but just to
+21:43
+tell you if something happens in nature
+21:45
+it takes one year you see publication
+21:48
+was received here the 1st November
+21:51
+2022 it was accepted by Nature after the
+21:54
+peer reviewing where other university
+21:57
+professors looked at this and validated
+21:58
+it at September 21st
+22:02
+2023 and it was published online just
+22:04
+for me some days ago November 6 2023 so
+22:08
+it took from November 1st 2022 to
+22:10
+November 6
+22:12
+2023 one year to be validated and then
+22:16
+finally published behind a pay wall
+22:18
+where the normal audience has no access
+22:21
+rights but if you're a student you go to
+22:24
+your
+22:25
+University you have access to the nature
+22:28
+Publications hopefully through your
+22:31
+University exactly like I do so please
+22:34
+this is the htps link if this is behind
+22:37
+the pay well sometimes they open the
+22:39
+payall for special events but yeah this
+22:42
+is it just to make sure and reading this
+22:45
+nature publication I get all the ideas
+22:47
+for this video so this is the reason why
+22:50
+I did this video and the ideas from this
+22:54
+video are responsible for what I just
+22:56
+showed you but I I also explain you the
+22:59
+content here of this nature article
+23:02
+great and here we are we want to
+23:05
+understand if we only have some thousand
+23:07
+sensors here floating around in the
+23:08
+ocean and maybe just some 100,000
+23:11
+sensors that we have on land on the
+23:14
+continent for air quality air pollution
+23:17
+temperature humidity whatever we want to
+23:20
+understand here our Global ecosystem so
+23:23
+going here from some sparse data some
+23:27
+sparse sense arrays that we have to
+23:31
+understand you the complete planetary
+23:33
+system and now with these insights that
+23:37
+we have in the large language model and
+23:39
+all the research that happened there and
+23:41
+the computer optimization think about
+23:43
+scaling Lura here about the memory
+23:45
+management optimization here under the
+23:48
+Nvidia data center gpus for the Kudo
+23:51
+coronal optimization if we apply this
+23:54
+now here we take this that exists on the
+23:56
+llm and and we move it over to the data
+23:59
+AI
+24:00
+system this is something I call transfer
+24:03
+learning this would be amazing and this
+24:07
+would be a real benefit here to
+24:09
+understand climate change and finally
+24:12
+come a step closer to understand here
+24:14
+the complete Global ecosystem so you see
+24:19
+understanding AI system even as simple
+24:21
+as an llm or visual language model or
+24:23
+robotic model system if we understand
+24:26
+the mathematics if understand the
+24:28
+principle how it is coded how we can
+24:30
+optimize each and every step we can use
+24:34
+this stand at a later time and apply it
+24:37
+here for our data sensory array where we
+24:41
+can reconstruct some Global
+24:43
+ecosystem I hope you find it also
+24:46
+interesting I am fascinated by this I
+24:48
+read the article I had all these ideas
+24:51
+and I wanted to make a video to share my
+24:53
+ideas my knowledge and I want to show
+24:56
+you if you understand what's going on
+24:58
+and not just copy the code and apply it
+25:01
+without understanding your insights you
+25:04
+can build new system that are absolutely
+25:08
+amazing this is it for today I hope it
+25:11
+was informative and it would be great to
+25:13
+see you in my next video
+
