@@ -16,6 +16,7 @@ If you need to look at code in the python scripts be careful to unzip them one a
 
 The Paper URL is: https://www.nature.com/articles/s42256-023-00746-x
 The Video URL is: https://www.youtube.com/watch?v=XRgoOzj7wcU
+URL to article in science magazine: https://scienmag.com/new-twist-on-ai-makes-the-most-of-sparse-sensor-data/
 
 supplemental informaion URL: https://static-content.springer.com/esm/art%3A10.1038%2Fs42256-023-00746-x/MediaObjects/42256_2023_746_MOESM1_ESM.pdf
 
